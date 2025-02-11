@@ -2,12 +2,17 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  ssr: false,
   modules: [
     'nuxt-vuefire',
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss'
   ],
   vuefire: {
+    auth: {
+      enabled: true,
+      sessionCookie: false,
+    },
     config: {
       apiKey: process.env.FIREBASE_API_KEY,
       authDomain: process.env.FIREBASE_AUTH_DOMAIN,
